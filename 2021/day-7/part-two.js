@@ -6,17 +6,9 @@ const fuelControl = {
   minFuel: 100000000000000000000000,
 }
 
-const recursiveFuel = (base, sum = 0) => {
-  if (base === 0) return 0;
-  sum += 1;
-  return (sum) + recursiveFuel(base - 1, sum)
-}
+const recursiveFuel = (base, sum = 0) => base === 0 ? sum : sum + recursiveFuel(base -1, sum +1);
 
-function allFuel(base) {
-  let fuel = 0;
-  input.forEach((number) => fuel += recursiveFuel(Math.abs(number - base)));
-  return fuel;
-}
+const allFuel = (base) => input.reduce((sum, cur) => sum + recursiveFuel(Math.abs(base - cur)), 0);
 
 function run() {
   let fuel;
