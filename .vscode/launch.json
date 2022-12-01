@@ -7,7 +7,7 @@
 
   {
     "name": "Launch Program",
-    "program": "${workspaceFolder}/src/day1/index.js",
+    "program": "${workspaceFolder}/2022/day1/index.js",
     "request": "launch",
     "skipFiles": [
       "<node_internals>/**"
