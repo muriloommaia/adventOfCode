@@ -10,9 +10,8 @@ const main = (moves, crates) => {
     acc[position] = crate.reverse();
     return acc;
   }, {});
-  const containerCrates2 = crates.reduce((acc, crate) => {
-    const position = crate.shift();
-    acc[position] = crate.reverse();
+  const containerCrates2 = Object.entries(containerCrates1).reduce((acc, [key, value]) => {
+    acc[key] = [...value];
     return acc;
   }, {});
   moves.forEach((move) => {
